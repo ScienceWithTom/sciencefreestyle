@@ -7,32 +7,9 @@ const sounds = [
 ];
 const countdown = 5000;
 const wordTimer = 7000;
-const words = [
-    'Air',
-    'Air Mass',
-    'Altitude',
-    'Asteroid',
-    'Atsmosphere',
-    'Axis',
-    'CO2',
-    'Catastrophic',
-    'Climate',
-    'Climate Change',
-    'Cloud',
-    'Complexity',
-    'Condensation',
-    'continent',
-    'Coriolois',
-    'Crystallization',
-    'Cycle',
-    'Dam',
-    'Density',
-    'Drought',
-    'Earth',
-]
 
-let audio;
-let timer;
+let audio = new Audio();
+let timer = new Timer(countdown, document.getElementById('countdown'), [], wordTimer);
 
 let startFreestyle = (topic) => {
     $('#menu').animate({
@@ -41,20 +18,37 @@ let startFreestyle = (topic) => {
         $('.exit').show();
         $('.countdown-container').css('display', 'flex');
 
-        audio = new Audio(`sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`);
+        audio.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
+        audio.load();
         audio.loop = true;
         audio.play();
 
-        timer = new Timer(countdown, document.getElementById('countdown'), words, wordTimer);
-        timer.start(() => {
-            $('.countdown-container').hide();
-        });
+        $.get(`data/${topic}.csv`)
+            .done((csv) => {
+                let words = [];
+                try {
+                    words = $.csv.toArrays(csv, { separator: ',', delimiter: '"', startIndex: 2});
+                } catch (error) {
+                    console.error(error);
+                    // TODO display error
+                    stopFreestyle();
+                }
+
+                timer.setWords(words);
+                timer.start(() => {
+                    $('.countdown-container').hide();
+                });
+            })
+            .fail(() => {
+                console.error(`Error while loading the CSV`);
+                // TODO display error
+                stopFreestyle();
+            });
     });
 };
 
 let stopFreestyle = () => {
     audio.pause(); 
-    audio = null;
     timer.reset();
 
     $('.countdown-container').hide();
