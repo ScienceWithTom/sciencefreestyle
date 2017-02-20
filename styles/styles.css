@@ -28,6 +28,11 @@ body {
     margin-bottom: 20px;
 }
 
+.topic:hover {
+    background: url('../images/mic.svg') no-repeat 65px 140px;
+    background-size: 60px 60px;
+}
+
 .topic-logo {
     max-height: 200px;
 }
