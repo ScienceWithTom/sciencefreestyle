@@ -1,0 +1,53 @@
+body {
+    background: #000;
+    color: #fff;
+    padding-bottom: 40px;
+}
+
+.logo {
+    height: 50px;
+    margin: 20px 10px;
+    display: block;
+}
+
+.logo img {
+    height: 100%;
+}
+
+.punchline {
+    text-align: center;
+}
+
+.topics {
+    padding: 20px 0;
+}
+
+.topic {
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.topic-logo {
+    max-height: 200px;
+}
+
+.topic-name {
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.topics a, .topics a:hover {
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    background: #000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+}
