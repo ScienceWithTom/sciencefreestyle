@@ -8,7 +8,7 @@ const sounds = [
 const countdown = 5000;
 const wordTimer = 7000;
 
-let audio = new Audio();
+let player = document.getElementById('player');
 let timer = new Timer(countdown, document.getElementById('countdown'), [], wordTimer);
 
 let startFreestyle = (topic) => {
@@ -17,11 +17,6 @@ let startFreestyle = (topic) => {
     }, 400, () => {
         $('.exit').show();
         $('.countdown-container').css('display', 'flex');
-
-        audio.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
-        audio.load();
-        audio.loop = true;
-        audio.play();
 
         $.get(`data/${topic}.csv`)
             .done((csv) => {
@@ -48,7 +43,7 @@ let startFreestyle = (topic) => {
 };
 
 let stopFreestyle = () => {
-    audio.pause(); 
+    player.pause(); 
     timer.reset();
 
     $('.countdown-container').hide();
@@ -57,3 +52,8 @@ let stopFreestyle = () => {
         top: 0
     }, 400);
 };
+
+$(".topic").click(function() {
+  player.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
+  player.play(); // Play the empty element to get control
+});
