@@ -4,6 +4,31 @@ const sounds = [
     'bob prod by chase moore 167 1',
     'CAME TO ROCK',
     'vienna173 prod. by chase moore',
+];
+const countdown = 5000;
+const wordTimer = 7000;
+const words = [
+    'Air',
+    'Air Mass',
+    'Altitude',
+    'Asteroid',
+    'Atsmosphere',
+    'Axis',
+    'CO2',
+    'Catastrophic',
+    'Climate',
+    'Climate Change',
+    'Cloud',
+    'Complexity',
+    'Condensation',
+    'continent',
+    'Coriolois',
+    'Crystallization',
+    'Cycle',
+    'Dam',
+    'Density',
+    'Drought',
+    'Earth',
 ]
 
 let audio;
@@ -20,7 +45,7 @@ let startFreestyle = (topic) => {
         audio.loop = true;
         audio.play();
 
-        timer = new Timer(5000, document.getElementById('countdown'), ['word1', 'word2']);
+        timer = new Timer(countdown, document.getElementById('countdown'), words, wordTimer);
         timer.start(() => {
             $('.countdown-container').hide();
         });
@@ -38,7 +63,3 @@ let stopFreestyle = () => {
         top: 0
     }, 400);
 };
-
-
-// $(() =>{
-// });

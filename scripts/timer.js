@@ -1,9 +1,10 @@
 class Timer {
-    constructor(duration, element, words) {
+    constructor(duration, element, words, wordTimer) {
         let self = this;
         this.duration = duration;
-        this.duration = duration;
         this.element = element;
+        this.words = words;
+        this.wordTimer = wordTimer;
         this.running = false;
         
         this.els = {
@@ -35,7 +36,8 @@ class Timer {
             } else {
                 self.running = false;
                 self.els.ticker.style.height = '0%';
-                self.startWords()
+                self.els.seconds.textContent = 0;
+                self.timeout = setTimeout(() => { self.startWords(); }, 1000);
             }
         };
         
@@ -43,8 +45,20 @@ class Timer {
     }
 
     startWords() {
-        this.els.seconds.textContent = 0;
+        // Reset CSS animation
+        this.element.classList.remove('countdown--ended');
+        void this.element.offsetWidth;
         this.element.classList.add('countdown--ended');
+
+        // Update word
+        let newWord;
+        do {
+            newWord = this.words[Math.floor(Math.random() * this.words.length)];
+        } while (newWord === this.els.seconds.textContent);
+        this.els.seconds.textContent = newWord;
+
+        // timer for next word
+        this.timeout = setTimeout(() => { this.startWords(); }, this.wordTimer);
     }
     
     reset() {

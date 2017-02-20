@@ -139,8 +139,8 @@ footer {
           transition-duration: 0.2s;
 }
 .countdown--ended {
-  -webkit-animation: buzz 0.5s;
-          animation: buzz 0.5s;
+  -webkit-animation: buzz 0.3s;
+          animation: buzz 0.3s;
 }
 .countdown:active {
   -webkit-transform: scale(1.02);
@@ -151,13 +151,13 @@ footer {
     -webkit-transform: rotate(0);
             transform: rotate(0);
   }
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: rotate(6deg);
-            transform: rotate(6deg);
+  10%, 50%, 90% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
   }
-  20%, 40%, 60%, 80% {
-    -webkit-transform: rotate(-6deg);
-            transform: rotate(-6deg);
+  20%, 60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
   }
   100% {
     -webkit-transform: rotate(0);
@@ -169,13 +169,13 @@ footer {
     -webkit-transform: rotate(0);
             transform: rotate(0);
   }
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: rotate(6deg);
-            transform: rotate(6deg);
+  10%, 50%, 90% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
   }
-  20%, 40%, 60%, 80% {
-    -webkit-transform: rotate(-6deg);
-            transform: rotate(-6deg);
+  20%, 60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
   }
   100% {
     -webkit-transform: rotate(0);
@@ -208,6 +208,10 @@ footer {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+.countdown--ended .countdown__digit {
+    color: white;
+    font-size: 16vmin;
 }
 .countdown__buttons {
   position: absolute;
