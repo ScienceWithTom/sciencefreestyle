@@ -20,7 +20,7 @@ a:hover {
 }
 
 header {
-    position: relative;
+    position: fixed;
     z-index: 999;
 }
 
@@ -30,7 +30,7 @@ header {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 600;
     overflow: auto;
 }
 
@@ -49,14 +49,16 @@ header {
     height: 100%;
 }
 
-.exit {
+.actions {
     display: none;
     position: fixed;
-    z-index: 100;
-    right: 20px;
-    top: 10px;
     font-size: 25px;
+    padding: 15px 20px;
+    z-index: 100;
+    top: 10px;
 }
+.exit { right: 20px; }
+.help { left: 100px; }
 
 .punchline {
     text-align: center;
@@ -224,6 +226,12 @@ footer {
     color: white;
     font-size: 16vmin;
 }
+
+.countdown__definition {
+    font-size: 5vmin;
+    padding: 0 10%;
+}
+
 .countdown__buttons {
   position: absolute;
   right: 50px;

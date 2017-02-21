@@ -16,7 +16,8 @@
   <body>
     <header class="container-fluid">
         <a class="logo" href="https://www.sciencewithtom.com/" target="_blank"><img src="images/logo-white_s.png" class="logo_text" title="Science Freestyle with Tom" alt="Science Freestyle with Tom"/></a>
-        <a class="exit" onclick="stopFreestyle()">X</a>
+        <a class="actions help" onclick="timer.toggleHelpers()">?</a>
+        <a class="actions exit" onclick="stopFreestyle()">X</a>
     </header>
 
     <div id="menuWrapper">
@@ -43,7 +44,7 @@
               <img class="topic-logo" src="images/physics.svg" />
               <div class="topic-name">Physics & Chemistry</div>
             </a>
-            <a class="col-sm-6 col-md-4 topic">
+            <a class="col-sm-6 col-md-4 topic" data-name="physics">
               <img class="topic-logo" src="images/you.svg" />
               <div class="topic-name">You</div>
             </a>
@@ -54,7 +55,10 @@
     <div class="countdown-container">
       <div class="countdown countdown--wide" id="countdown">
         <div class="countdown__fill" id="ticker"></div>
-        <div class="countdown__digit" id="seconds">00</div>
+        <div class="countdown__digit" id="digit">
+          <div id="seconds"></div>
+          <div class="countdown__definition" id="definition"></div>
+        </div>
         <!--.countdown__buttons-->
         <!--	.countdown__button + -->
         <!--	.countdown__button - -->

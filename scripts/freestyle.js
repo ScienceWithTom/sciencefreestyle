@@ -15,7 +15,7 @@ let startFreestyle = (topic) => {
     $('#menuWrapper').animate({
         top: '100%'
     }, 400, () => {
-        $('.exit').show();
+        $('.actions').show();
         $('.countdown-container').css('display', 'flex');
 
         $.get(`data/${topic}.csv`)
@@ -30,9 +30,7 @@ let startFreestyle = (topic) => {
                 }
 
                 timer.setWords(words);
-                timer.start(() => {
-                    $('.countdown-container').hide();
-                });
+                timer.start();
             })
             .fail(() => {
                 console.error(`Error while loading the CSV`);
@@ -47,13 +45,17 @@ let stopFreestyle = () => {
     timer.reset();
 
     $('.countdown-container').hide();
-    $('.exit').hide();
+    $('.actions').hide();
     $('#menuWrapper').animate({
         top: 0
     }, 400);
 };
 
-$(".topic").click(function(e) {
+$('#countdown').click((e) => {
+    timer.toggleDefinition();
+});
+
+$(".topic").click((e) => {
     let topicName = $(e.currentTarget).data('name')
     console.log(topicName);
 

@@ -10,6 +10,7 @@ class Timer {
         this.els = {
             ticker: document.getElementById('ticker'),
             seconds: document.getElementById('seconds'),
+            definition: document.getElementById('definition'),
         };
     }
     
@@ -18,6 +19,7 @@ class Timer {
         let start = null;
         this.running = true;
         let remainingSeconds = this.els.seconds.textContent = this.duration / 1000;
+        this.els.definition.textContent = '';
         
         function draw(now) {
             if (!start) start = now;
@@ -50,15 +52,49 @@ class Timer {
         void this.element.offsetWidth;
         this.element.classList.add('countdown--ended');
 
-        // Update word
+        // Update word until different from previous one
         let newWord;
         do {
             newWord = this.words[Math.floor(Math.random() * this.words.length)];
         } while (newWord[2] === this.els.seconds.textContent);
+        this.word = newWord;
         this.els.seconds.textContent = newWord[2];
+        if(this.helper) {
+            this.els.definition.textContent = this.word[4];
+        }
 
         // timer for next word
         this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
+    }
+
+    toggleHelpers() {
+        if (this.helper) {
+            this.helper = false;
+            this.els.definition.textContent = '';
+        }
+        else {
+            this.helper = true;
+            this.els.definition.textContent = this.word[4];
+        }
+    }
+
+    toggleDefinition() {
+        if (this.definition) {
+            this.definition = false;
+            this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
+            if (this.helper) {
+                this.els.definition.textContent = this.word[4];
+            }
+            else {
+                this.els.definition.textContent = '';
+            }
+        }
+        else {
+            this.definition = true;
+            clearInterval(this.timeout);
+            this.timeout = null;
+            this.els.definition.textContent = this.word[3];
+        }
     }
     
     reset() {
