@@ -19,33 +19,35 @@
         <a class="exit" onclick="stopFreestyle()">X</a>
     </header>
 
-    <div class="container" id="menu">
-      <div class="col-sm-12 punchline">
-        <h1>Show your Freestyle skills with Science.</h1>
-        <h4><em>Pick a topic</em></h4>
-      </div>
+    <div id="menuWrapper">
+      <div class="container" id="menu">
+        <div class="col-sm-12 punchline">
+          <h1>Show your Freestyle skills with Science.</h1>
+          <h4><em>Pick a topic</em></h4>
+        </div>
 
-      <div class="col-sm-12 topics">
-          <a class="col-sm-6 col-md-4 topic" onclick="startFreestyle('earth');">
-            <img class="topic-logo" src="images/earth.svg" />
-            <div class="topic-name">Earth</div>  
-          </a>
-          <a class="col-sm-6 col-md-4 topic" onclick="startFreestyle('life');">
-            <img class="topic-logo" src="images/life.svg" />
-            <div class="topic-name">Life</div>  
-          </a>
-          <a class="col-sm-6 col-md-4 topic" onclick="startFreestyle('SandE');">
-            <img class="topic-logo" src="images/SandE.svg" />
-            <div class="topic-name">S&E Practices</div>  
-          </a>
-          <a class="col-sm-6 col-md-4 col-md-offset-2 topic" onclick="startFreestyle('physics');">
-            <img class="topic-logo" src="images/physics.svg" />
-            <div class="topic-name">Physics & Chemistry</div>
-          </a>
-          <a class="col-sm-6 col-md-4 topic">
-            <img class="topic-logo" src="images/you.svg" />
-            <div class="topic-name">You</div>
-          </a>
+        <div class="col-sm-12 topics">
+            <a class="col-sm-6 col-md-4 topic" data-name="earth">
+              <img class="topic-logo" src="images/earth.svg" />
+              <div class="topic-name">Earth</div>  
+            </a>
+            <a class="col-sm-6 col-md-4 topic" data-name="life">
+              <img class="topic-logo" src="images/life.svg" />
+              <div class="topic-name">Life</div>  
+            </a>
+            <a class="col-sm-6 col-md-4 topic" data-name="SandE">
+              <img class="topic-logo" src="images/SandE.svg" />
+              <div class="topic-name">S&E Practices</div>  
+            </a>
+            <a class="col-sm-6 col-md-4 col-md-offset-2 topic" data-name="physics">
+              <img class="topic-logo" src="images/physics.svg" />
+              <div class="topic-name">Physics & Chemistry</div>
+            </a>
+            <a class="col-sm-6 col-md-4 topic">
+              <img class="topic-logo" src="images/you.svg" />
+              <div class="topic-name">You</div>
+            </a>
+        </div>
       </div>
     </div>
 

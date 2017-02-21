@@ -12,8 +12,8 @@ let player = document.getElementById('player');
 let timer = new Timer(countdown, document.getElementById('countdown'), [], wordTimer);
 
 let startFreestyle = (topic) => {
-    $('#menu').animate({
-        top: 2000
+    $('#menuWrapper').animate({
+        top: '100%'
     }, 400, () => {
         $('.exit').show();
         $('.countdown-container').css('display', 'flex');
@@ -48,12 +48,18 @@ let stopFreestyle = () => {
 
     $('.countdown-container').hide();
     $('.exit').hide();
-    $('#menu').animate({
+    $('#menuWrapper').animate({
         top: 0
     }, 400);
 };
 
-$(".topic").click(function() {
-  player.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
-  player.play(); // Play the empty element to get control
+$(".topic").click(function(e) {
+    let topicName = $(e.currentTarget).data('name')
+    console.log(topicName);
+
+    if (topicName) {
+        player.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
+        player.play(); // Play the empty element to get control
+        startFreestyle(topicName);
+    }
 });
