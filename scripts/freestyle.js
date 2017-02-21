@@ -5,11 +5,11 @@ const sounds = [
     'CAME TO ROCK',
     'vienna173 prod. by chase moore',
 ];
-const countdown = 5000;
+const countdownTimer = 5000;
 const wordTimer = 7000;
 
-let player = document.getElementById('player');
-let timer = new Timer(countdown, document.getElementById('countdown'), [], wordTimer);
+let audioPlayer = document.getElementById('player');
+let timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer);
 
 let startFreestyle = (topic) => {
     $('#menuWrapper').animate({
@@ -43,7 +43,7 @@ let startFreestyle = (topic) => {
 };
 
 let stopFreestyle = () => {
-    player.pause(); 
+    audioPlayer.pause(); 
     timer.reset();
 
     $('.countdown-container').hide();
@@ -58,8 +58,8 @@ $(".topic").click(function(e) {
     console.log(topicName);
 
     if (topicName) {
-        player.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
-        player.play(); // Play the empty element to get control
+        audioPlayer.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
+        audioPlayer.play(); // Play the empty element to get control
         startFreestyle(topicName);
     }
 });
