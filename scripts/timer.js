@@ -93,7 +93,7 @@ class Timer {
             this.definition = true;
             clearInterval(this.timeout);
             this.timeout = null;
-            this.els.definition.textContent = this.word[3];
+            this.els.definition.textContent = `"${this.word[3]}"`;
         }
     }
     
