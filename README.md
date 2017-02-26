@@ -7,6 +7,32 @@ Readme is the index page of github - home page with git hub
 * shortcut for this preview is  command k 
 * this negates the need for that code thing
 
+# Changing Vocab Spreadsheets
+*Spreadsheet stored in "Data".
+* 1. Download "physics" tab as .csv
+* 2. Replace the physics.csv tab with new one on desktop
+* 3. In GitHub desktop, press commit, then sync
+* 4. In GitHub (online) make all of your changes
+
+# Changing or adding songs
+* 1. Add any song files you want to "sounds" folder locally
+* 2. Go to scripts --> freestyle.js
+* 3. Add in format of --> 'new instrumental',
+* 4. Don't forget the comma!
+* 5. Script will randomly pull any of these listed files 
+
+# Testing the changes to your code with a local host (as if it was online)
+* open the [terminal](https://www.iterm2.com/) with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) to make it more readable
+* use terminal to load your local file. in this case
+* pwd --> print working directory (folder) tells you waht folder you're In
+* ls -> LIST all of the contents of the directory
+* cd --> change which directory I am in 
+* control c --> stops the python running and puts you back in the "shell"
+* once you use cd to get from tomcfad ---> Documents --> sciencefreestyle, copy and paste the python script at the bottom of this Documents
+* This python script will serve your website locally
+* Open a new tab in Firefox --> type http://localhost:6969/ and check it out!
+
+
 
 # Important Links
 
@@ -15,7 +41,7 @@ Readme is the index page of github - home page with git hub
 *[Vocab Spreadsheet with rhymes and defs](https://docs.google.com/spreadsheets/d/1IFKJ5A3l4PbprvJfx5N7uhVRvwT0v_tKelDcp_7uqO8/edit#gid=672334735
 )
 
-# GitHub Notes
+# GitHub Jargon Notes
 *push --> sending your new files to the GitHub
 *Git is the technology that allows you to do versioning. GitHub is platrom.
 *pull --> pulling information from GitHub. there is what on your comp and what is GitHub
