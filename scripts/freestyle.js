@@ -7,6 +7,7 @@ const sounds = [
 ];
 const countdownTimer = 5000;
 const wordTimer = 7000;
+var current_level=1;
 
 let audioPlayer = document.getElementById('player');
 let timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer);
@@ -28,6 +29,16 @@ let startFreestyle = (topic) => {
                     // TODO display error
                     stopFreestyle();
                 }
+                // split words into dictionary with different levels
+                console.log(words);
+                let word_levels = {1:[],2:[],3:[]}
+                for (let i=1; i<words.length; i++) {
+                  let level=parseInt(words[i][5]);
+                  console.log(level);
+                  let word=words[i][2];
+                  word_levels[level].push(word);
+                }
+                console.log(word_levels);
 
                 timer.setWords(words);
                 timer.start();
@@ -41,7 +52,7 @@ let startFreestyle = (topic) => {
 };
 
 let stopFreestyle = () => {
-    audioPlayer.pause(); 
+    audioPlayer.pause();
     timer.reset();
 
     $('.countdown-container').hide();
@@ -58,6 +69,7 @@ $('#countdown').click((e) => {
 $(".topic").click((e) => {
     let topicName = $(e.currentTarget).data('name')
     console.log(topicName);
+    console.log(current_level);
 
     if (topicName) {
         audioPlayer.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
