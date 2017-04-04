@@ -41,18 +41,6 @@ class Timer {
                 self.els.seconds.textContent = 0;
                 self.changeWord();
             }
-            //go to next word if the right arrow key is pressed
-            document.onkeydown = checkKey;
-            function checkKey(e) {
-              e = e || window.event;
-              if (e.keyCode=='39') {
-                self.running = false;
-                self.els.ticker.style.height = '0%';
-                self.els.seconds.textContent = 0;
-                clearTimeout(self.timeout);
-                self.changeWord();
-              }
-            }
         };
         self.frameReq = window.requestAnimationFrame(draw);
     }
@@ -124,5 +112,16 @@ class Timer {
 
     setWords(words) {
         this.words = words;
+    }
+    //go to next word if the right arrow key is pressed
+    checkKey(e) {
+      e = e || window.event;
+      if (e.keyCode=='39') {
+        self.running = false;
+        self.els.ticker.style.height = '0%';
+        self.els.seconds.textContent = 0;
+        clearTimeout(self.timeout);
+        self.changeWord();
+      }
     }
 }

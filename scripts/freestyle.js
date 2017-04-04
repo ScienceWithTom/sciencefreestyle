@@ -65,7 +65,9 @@ let stopFreestyle = () => {
 $('#countdown').click((e) => {
     timer.toggleDefinition();
 });
-
+$(document).keypress((e) => {
+  timer.checkKey(e);
+});
 $(".topic").click((e) => {
     let topicName = $(e.currentTarget).data('name')
     console.log(topicName);
