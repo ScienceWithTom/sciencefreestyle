@@ -8,6 +8,8 @@ const sounds = [
 const countdownTimer = 5000;
 const wordTimer = 7000;
 var current_level=1;
+var level_change=false;
+var word_levels = {1:[],2:[],3:[]}
 
 let audioPlayer = document.getElementById('player');
 let timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer);
@@ -30,17 +32,12 @@ let startFreestyle = (topic) => {
                     stopFreestyle();
                 }
                 // split words into dictionary with different levels
-                console.log(words);
-                let word_levels = {1:[],2:[],3:[]}
                 for (let i=1; i<words.length; i++) {
                   let level=parseInt(words[i][5]);
-                  console.log(level);
-                  let word=words[i][2];
+                  let word=words[i];
                   word_levels[level].push(word);
                 }
-                console.log(word_levels);
-
-                timer.setWords(words);
+                timer.setWords(word_levels[current_level]);
                 timer.start();
             })
             .fail(() => {
@@ -61,7 +58,12 @@ let stopFreestyle = () => {
         top: 0
     }, 400);
 };
-
+let newList = (level) => {
+  current_level = level;
+  timer.setWords(word_levels[level]);
+  timer.changeWord();
+  console.log("newlist "+level);
+}
 $('#countdown').click((e) => {
     timer.toggleDefinition();
 });
@@ -71,7 +73,6 @@ $(document).keypress((e) => {
 $(".topic").click((e) => {
     let topicName = $(e.currentTarget).data('name')
     console.log(topicName);
-    console.log(current_level);
 
     if (topicName) {
         audioPlayer.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
