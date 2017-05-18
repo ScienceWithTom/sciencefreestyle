@@ -7,6 +7,7 @@ class Timer {
         this.wordTimer = wordTimer;
         this.running = false;
         this.current_level = current_level;
+        this.index = 0;
         this.els = {
             ticker: document.getElementById('ticker'),
             seconds: document.getElementById('seconds'),
@@ -54,7 +55,13 @@ class Timer {
         // Update word until different from previous one
         let newWord;
         do {
-            newWord = this.words[Math.floor(Math.random() * this.words.length)];
+          newWord = this.words[this.index];
+          this.index++;
+          if (this.index===this.words.length) {
+            this.index=0;
+            this.current_level=this.current_level%3+1;
+            newList(this.current_level);
+          }
         } while (newWord[2] === this.els.seconds.textContent);
         this.word = newWord;
         this.els.seconds.textContent = newWord[2];

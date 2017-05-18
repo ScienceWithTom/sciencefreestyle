@@ -8,11 +8,12 @@ const sounds = [
 const countdownTimer = 5000;
 const wordTimer = 7000;
 var current_level=1;
-var level_change=false;
-var word_levels = {1:[],2:[],3:[]}
+var word_levels = {1:[],2:[],3:[]};
+var index1 = 0;
+var index2 = 0;
 
 let audioPlayer = document.getElementById('player');
-let timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer);
+let timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer, current_level);
 
 let startFreestyle = (topic) => {
     $('#menuWrapper').animate({
@@ -36,6 +37,18 @@ let startFreestyle = (topic) => {
                   let level=parseInt(words[i][5]);
                   let word=words[i];
                   word_levels[level].push(word);
+                }
+                // randomly switch the order of words in the dictionary
+                for (let i=1; i<4; i++) {
+                  for (let j=0; j<word_levels[i].length; j++) {
+                    var randomInt=Math.floor(Math.random() * word_levels[i].length);
+                    index1=word_levels[i][j];
+                    index2=word_levels[i][randomInt];
+                    word_levels[i][j]=index2;
+                    word_levels[i][randomInt]=index1;
+                  }
+                  for (let k=0; k<word_levels[i].length; k++) {
+                  }
                 }
                 timer.setWords(word_levels[current_level]);
                 timer.start();
@@ -61,8 +74,6 @@ let stopFreestyle = () => {
 let newList = (level) => {
   current_level = level;
   timer.setWords(word_levels[level]);
-  timer.changeWord();
-  console.log("newlist "+level);
 }
 $('#countdown').click((e) => {
     timer.toggleDefinition();
@@ -72,7 +83,6 @@ $(document).keypress((e) => {
 });
 $(".topic").click((e) => {
     let topicName = $(e.currentTarget).data('name')
-    console.log(topicName);
 
     if (topicName) {
         audioPlayer.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
