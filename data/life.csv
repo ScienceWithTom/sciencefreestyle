@@ -1,12 +1,7 @@
-NGSS Topic,"Subtopics: 
-MOLECULES TO CELLS
-ORGANISMS
-ECOSYSTEMS
-HEREDITY
-EVOLUTION",Word,Definition,Rhyming Heplers,Level of Difficulty,Number of Syllables,Broad Grade Level,SFUSD Grade
+NGSS Topic,"Subtopics: MOLECULES TO CELLSORGANISMSECOSYSTEMSHEREDITYEVOLUTION",Word,Definition,Rhyming Heplers,Level of Difficulty,Number of Syllables,Broad Grade Level,SFUSD Grade
 Life,Ecosystems,Abiotic,"nonliving, physical features of the environment, including air, water, sunlight, soil, temperature, and climate.","aquatic, chaotic, exotic, psychotic, , logic, got it, rotten, toxic, topic, tropic, atomic",3,4,Middle School,
 Life,Ecosystems,Abundant,existing or available in large quantities,"fund it, redundant, pundit, judgement, hunting, plummet, stunning, summit,  repugnant",3,4,Middle School,
-Life,Evolution,Adapt,to adjust to new conditions,"apt, chapped, flapped, napped, snapped, strapped, untapped, act, advanced, attached, attract, outlast, relaxed",,,,
+Life,Evolution,Adapt,to adjust to new conditions,"apt, chapped, flapped, napped, snapped, strapped, untapped, act, advanced, attached, attract, outlast, relaxed",2,2,,
 Life,Ecosystems,Algae,"chlorophyll-containing, plantlike protists that produce oxygen as a result of photosynthesis.","alley, valley, tally, nostalgic",3,4,Middle School,7
 Life,Heredity,Allele,an alternate form that a gene may have for a single trait; can be dominant or recessive.,"appeal, conceal, ideal, reveal, surreal, ",2,2,Middle School,6
 Life,Evolution,Anatomy,the branch of science concerned with bodily structure,"mad at me, gravity, alchemy, actually, anxiously, malady, nastily, rapidly, satiny, vanity, tragedy , academy, analogy",3,4,Middle School,
@@ -16,7 +11,7 @@ Life,Organisms,Artery,"blood vessel that carries blood away from the heart, and 
 Life,Evolution,Artificial,Artifiical selection - when humans selectively breed plants or animals for certain traits,"nickle, sickle, trickle, pickle, , little, judicial, official, beneficial, , sacrificial, ",3,4,Middle School,
 Life,Molecules to Cells,Asexual,"a reproductive strategy that requires no mates, and leads to clones","consensual, conceptual, intellectual, eventua, perpetual, conventional, flexible, ",3,4,Middle School,6
 Life,Heredity,Asexual,"a reproductive strategy that requires no mates, and leads to clones","consensual, conceptual, intellectual, eventua, perpetual, conventional, flexible, ",3,4,Middle School,
-Life,Molecules to Cells,Bacteria,unicellular organisms that dominate the earth in their numbers and diversity (if not their size),"Syria, diptheria, Siberia, cafeteria, criteria, superior",4,4,Middle School,6
+Life,Molecules to Cells,Bacteria,unicellular organisms that dominate the earth in their numbers and diversity (if not their size),"Syria, diptheria, Siberia, cafeteria, criteria, superior",3,4,Middle School,6
 Life,Organisms,Behavior,the way in which an organism interacts with other organisms and its environment; can be innate or learned.,"savior, Xavier, failure, favor, hater, later, nature, player, traitor, inhaler, teenager",3,3,Middle School,6
 Life,Ecosystems,Biodiversity,a variety of life in a habitat or ecosystem,"adversity, absurdity, certrainty, harmony, perfectly, purposefully, thirstily, urgency, verdancy, eternity, uncertainty",3,6,Middle School,7
 Life,Organisms,Body ,the physical structure of a person or animal,"coffee, copy, floppy, godly, groggy, hobby, jockey, oddly, potty, rocky, snotty, zombie",2,2,Middle School,6
@@ -28,8 +23,8 @@ Life,Molecules to Cells,Cell Wall,"rigid structure that encloses, supports, and 
 Life,Evolution,Change,"When the environment changes, populations often change with it via natural selection (or go extinct)","range, strange, exchange, derange, pains, brains, veins",1,1,Middle School,
 Life,Ecosystems,Chemistry,the study of the the substances from which matter is made and interactions between them,"density, destiny, ectasy, empathy, enemy, , heavenly, legibly, legacy, medically,  mentally, messily, recipe, remedy, sesame, specialty, technically, weaponry",3,3,Middle School,7
 Life,Molecules to Cells,Chloroplast,"green, chlorophyll-containing, plant-cell organelle that uses light energy to produce sugar from carbon dioxide and water.","blast, fast, last, past, vast, amassed, contrast, outcast, outlast, ",3,3,Middle School,6
-Life,Molecules to Cells,Chromosome,structure in a cellâ€™s nucleus that contains hereditary material.,"genome, storage zone, dome, syndrome, styrofoam",3,3,Middle School,6
-Life,Heredity,Chromosome,structure in a cellâ€™s nucleus that contains hereditary material.,"genome, storage zone, dome, syndrome, styrofoam",3,3,Middle School,
+Life,Molecules to Cells,Chromosome,structure in a cell_ã_s nucleus that contains hereditary material.,"genome, storage zone, dome, syndrome, styrofoam",3,3,Middle School,6
+Life,Heredity,Chromosome,structure in a cell_ã_s nucleus that contains hereditary material.,"genome, storage zone, dome, syndrome, styrofoam",3,3,Middle School,
 Life,Organisms,Circulatory,relating to the circulation of blood or sap,"story, glory, category, dormitory, inventory, territory, sorry",3,5,Middle School,6
 Life,Ecosystems,Community,all the populations of different species that live in an ecosystem.,"unity, you and me, immunity, opportunity, beautifully, jubilee, usefully, usually",3,4,Middle School,
 Life,Ecosystems,Competitive,"When two organisms compete for food in the same ecological niche, it can be fierce","repetitive, sedative, Edison, expletive, medicine, negative, relative, tentative",3,4,Middle School,
@@ -139,8 +134,8 @@ Life,Molecules to Cells,Tissue,group of similar cells that work together to do o
 Life,Evolution,Trait,"a physical quality or characteristic, determined by DNA","ate, eight, date, fate, freight, great, mate, plate, skate, straight, weight, wait, , debate, ",1,1,Middle School,6
 Life,Heredity,Trait,"a physical quality or characteristic, determined by DNA","ate, eight, date, fate, freight, great, mate, plate, skate, straight, weight, wait, , debate, ",1,1,Middle School,
 Life,Molecules to Cells,Unicellular,consisting of a single cell,"centromere, Guenever, messenger, predator, regular, stegosaur, competitor, molecular",3,5,Middle School,6
-Life,Evolution,Variation,inherited trait that makes an individual different from other members of the same species and results from a mutation in the organismâ€™s genes.,"causation, nation, station, causation, citation, creation, donation, elation, dalmation, filtration, formation, migration, narration, probation, space station, starvation, vacation, translation, vibration",3,4,Middle School,6
-Life,Heredity,Variation,inherited trait that makes an individual different from other members of the same species and results from a mutation in the organismâ€™s genes.,"causation, nation, station, causation, citation, creation, donation, elation, dalmation, filtration, formation, migration, narration, probation, space station, starvation, vacation, translation, vibration",3,4,Middle School,
+Life,Evolution,Variation,inherited trait that makes an individual different from other members of the same species and results from a mutation in the organism_ã_s genes.,"causation, nation, station, causation, citation, creation, donation, elation, dalmation, filtration, formation, migration, narration, probation, space station, starvation, vacation, translation, vibration",3,4,Middle School,6
+Life,Heredity,Variation,inherited trait that makes an individual different from other members of the same species and results from a mutation in the organism_ã_s genes.,"causation, nation, station, causation, citation, creation, donation, elation, dalmation, filtration, formation, migration, narration, probation, space station, starvation, vacation, translation, vibration",3,4,Middle School,
 Life,Ecosystems,Water,"a transparent, colorless, odorless, tasteless liquid that forms the basis of life","blotter, daughter, hotter, otter, Potter, slaughter, spotter, swatter, alma mater, ",2,2,Middle School,6
 Life,Molecules to Cells,Water,"a transparent, colorless, odorless, tasteless liquid that forms the basis of life","blotter, daughter, hotter, otter, Potter, slaughter, spotter, swatter, alma mater, ",2,2,Middle School,7
 Life,Evolution,Wing,"a specialized, paired appendage that enables some animals to fly","Bing, bring, cling, fling, ping, sing, sting, thing, , king",1,1,Middle School,

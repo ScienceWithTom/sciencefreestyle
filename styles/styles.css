@@ -58,6 +58,15 @@ header {
     top: 10px;
 }
 .exit { right: 20px; }
+#level1 {
+  left: 150px;
+}
+#level2 {
+  left: 225px;
+}
+#level3 {
+  left: 300px;
+}
 .help { left: 100px; }
 
 .punchline {
