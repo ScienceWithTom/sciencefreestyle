@@ -20,6 +20,9 @@
         <a class="actions" id="level1" onclick="newList(1)">level 1</a>
         <a class="actions" id="level2" onclick="newList(2)">level 2</a>
         <a class="actions" id="level3" onclick="newList(3)">level 3</a>
+        <a class="actions" id="minus_time" onclick="changeTime(-1)">-</a>
+        <a class="actions" id="plus_time" onclick="changeTime(1)">+</a>
+        <a class="actions" id="time">time</a>
         <a class="actions exit" onclick="stopFreestyle()">X</a>
     </header>
 
@@ -47,10 +50,6 @@
               <img class="topic-logo" src="images/physics.svg" />
               <div class="topic-name">Physics & Chemistry</div>
             </a>
-            <!--<a class="col-sm-6 topic" data-name="physics">
-              <img class="topic-logo" src="images/you.svg" />
-              <div class="topic-name">You</div>
-            </a>-->
         </div>
       </div>
     </div>
@@ -62,9 +61,6 @@
           <div id="seconds"></div>
           <div class="countdown__definition" id="definition"></div>
         </div>
-        <!--.countdown__buttons-->
-        <!--	.countdown__button + -->
-        <!--	.countdown__button - -->
       </div>
     </div>
 
