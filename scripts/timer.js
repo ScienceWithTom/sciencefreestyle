@@ -12,7 +12,9 @@ class Timer {
             ticker: document.getElementById('ticker'),
             seconds: document.getElementById('seconds'),
             definition: document.getElementById('definition'),
+            rhymes: document.getElementById('rhymes'),
         };
+        this.pastWords = [];  
     }
 
     start(callback) {
@@ -21,6 +23,7 @@ class Timer {
         this.running = true;
         let remainingSeconds = this.els.seconds.textContent = this.duration / 1000;
         this.els.definition.textContent = '';
+        this.els.rhymes.textContent = ''; 
 
         function draw(now) {
             if (!start) start = now;
@@ -46,44 +49,70 @@ class Timer {
         self.frameReq = window.requestAnimationFrame(draw);
     }
 
-    changeWord() {
-        // Reset CSS animation
-        this.element.classList.remove('countdown--ended');
-        void this.element.offsetWidth;
-        this.element.classList.add('countdown--ended');
+    /* 
+    Function: changeWord(leftArrowKey)
+    Parameters: leftArrowKey
+    Changes word when timer is up or left/right arrow keys are pressed
+    */
+    changeWord(leftArrowKey) {
+        if (!this.running) {
+            // Reset CSS animation
+            this.element.classList.remove('countdown--ended');
+            void this.element.offsetWidth;
+            this.element.classList.add('countdown--ended');
 
-        // Update word until different from previous one
-        let newWord;
-        do {
-          newWord = this.words[this.index];
-          this.index++;
-          if (this.index===this.words.length) {
-            this.index=0;
-            this.current_level=this.current_level%3+1;
-            newList(this.current_level);
-          }
-        } while (newWord[2] === this.els.seconds.textContent);
-        this.word = newWord;
-        this.els.seconds.textContent = newWord[2];
-        if(this.helper) {
-            this.els.definition.textContent = this.word[4];
+            // Update word until different from previous one
+            let newWord;
+            if (!leftArrowKey) {
+                //Add last word list to words used
+                this.pastWords.push(this.word); 
+
+                do {
+                newWord = this.words[this.index];
+                this.index++;
+                    if (this.index === this.words.length) {
+                        this.index = 0;
+                    }
+                } while (newWord[2] === this.els.seconds.textContent);
+
+            
+            } else {
+                if (this.pastWords.length > 1) {
+                    newWord = this.pastWords[this.pastWords.length-1];
+                    this.pastWords.pop(); 
+                } else {
+                    newWord = this.word; 
+                } 
+            }
+            this.word = newWord;
+            this.els.seconds.textContent = newWord[2];
+            this.els.definition.textContent = `"${this.word[3]}"`
+            this.els.rhymes.textContent = this.word[4];
+            clearTimeout(this.timeout);
+            // timer for next word
+            this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
         }
-        clearTimeout(this.timeout);
-        // timer for next word
-        this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
     }
 
+    /*
+    Function: toggleHelpers() 
+    Show/hide rhyming helper content
+    */
     toggleHelpers() {
         if (this.helper) {
             this.helper = false;
-            this.els.definition.textContent = '';
+            this.els.rhymes.textContent = '';
         }
         else {
             this.helper = true;
-            this.els.definition.textContent = this.word[4];
+            this.els.rhymes.textContent = this.word[4];
         }
     }
 
+    /* 
+    Function: toggleDefinition()
+    Show/Hide definition content
+    */
     toggleDefinition() {
         if (this.definition) {
             this.definition = false;
@@ -97,18 +126,22 @@ class Timer {
         }
         else {
             this.definition = true;
-            clearInterval(this.timeout);
-            this.timeout = null;
             this.els.definition.textContent = `"${this.word[3]}"`;
         }
     }
 
+    /* 
+    Function: reset()
+    Resets the timer, cancelling any ongoing function calls
+    */
     reset() {
         this.running = false;
         window.cancelAnimationFrame(this.frameReq);
         clearTimeout(this.timeout);
         this.els.seconds.textContent = this.duration / 1000;
         this.els.ticker.style.height = null;
+        this.els.definition.textContent = ''; 
+        this.els.rhymes.textContent = ''; 
         this.element.classList.remove('countdown--ended');
     }
 
@@ -121,7 +154,10 @@ class Timer {
         this.words = words;
     }
 
-    //go to next word if the right arrow key is pressed
+    /*
+    Function: checkKey(e)
+    Change words on arrow key press
+    */
     checkKey(e) {
       e = e || window.event;
       if (e.keyCode=='39') {
