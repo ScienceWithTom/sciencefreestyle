@@ -101,12 +101,12 @@ class Timer {
     toggleHelpers() {
         if (this.helper) {
             this.helper = false;
-            this.els.rhymes.textContent = '';
         }
         else {
             this.helper = true;
             this.els.rhymes.textContent = this.word[4];
         }
+        this.els.rhymes.hidden = !this.els.rhymes.hidden;
     }
 
     /* 
@@ -116,18 +116,13 @@ class Timer {
     toggleDefinition() {
         if (this.definition) {
             this.definition = false;
-            this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
-            if (this.helper) {
-                this.els.definition.textContent = this.word[4];
-            }
-            else {
-                this.els.definition.textContent = '';
-            }
+            //this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
         }
         else {
-            this.definition = true;
+            this.definition = !this.els.definition.hidden;
             this.els.definition.textContent = `"${this.word[3]}"`;
         }
+        this.els.definition.hidden = !this.els.definition.hidden; 
     }
 
     /* 

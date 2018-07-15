@@ -29,8 +29,7 @@ let startFreestyle = (topic) => {
             .done((csv) => {
                 let words = [];
                 try {
-                    words = $.csv.toArrays(csv, { separator: ',', delimiter: '"', startIndex: 2});
-                    console.log(words); 
+                    words = $.csv.toArrays(csv, { separator: ',', delimiter: '"', startIndex: 2}); 
                 } catch (error) {
                     console.error(error);
                     stopFreestyle();
