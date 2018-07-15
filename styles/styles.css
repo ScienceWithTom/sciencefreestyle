@@ -59,15 +59,22 @@ header {
 }
 .exit { right: 20px; }
 #level1 {
-  left: 150px;
+  right: 300px;
+  color: #FF5722;
 }
 #level2 {
-  left: 225px;
+  right: 200px;
 }
 #level3 {
-  left: 300px;
+  right: 100px;
 }
-.help { left: 100px; }
+.help { 
+    left: 100px; 
+}
+
+.define {
+    left: 275px; 
+}
 
 .punchline {
     text-align: center;
@@ -232,13 +239,20 @@ footer {
           user-select: none;
 }
 .countdown--ended .countdown__digit {
-    color: white;
+    color: #FF5722;
     font-size: 16vmin;
 }
 
 .countdown__definition {
+    color:white;
     font-size: 5vmin;
     padding: 0 10%;
+}
+
+.countdown__rhymes {
+    font-size: 5vmin;
+    padding: 0 10%;
+    color: white; 
 }
 
 .countdown__buttons {

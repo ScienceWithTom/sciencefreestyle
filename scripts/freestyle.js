@@ -1,3 +1,4 @@
+/* Sound Titles*/
 const sounds = [
     '1. no games 165 prod by Chase Moore',
     'advancement',
@@ -5,9 +6,11 @@ const sounds = [
     'CAME TO ROCK',
     'vienna173 prod. by chase moore',
 ];
+
 const countdownTimer = 5000;
 const wordTimer = 7000;
-var current_level=1;
+var topicName = null; 
+var current_level= 1;
 var word_levels = {1:[],2:[],3:[]};
 var index1 = 0;
 var index2 = 0;
@@ -26,10 +29,9 @@ let startFreestyle = (topic) => {
             .done((csv) => {
                 let words = [];
                 try {
-                    words = $.csv.toArrays(csv, { separator: ',', delimiter: '"', startIndex: 2});
+                    words = $.csv.toArrays(csv, { separator: ',', delimiter: '"', startIndex: 2}); 
                 } catch (error) {
                     console.error(error);
-                    // TODO display error
                     stopFreestyle();
                 }
                 // split words into dictionary with different levels
@@ -55,34 +57,42 @@ let startFreestyle = (topic) => {
             })
             .fail(() => {
                 console.error(`Error while loading the CSV`);
-                // TODO display error
                 stopFreestyle();
             });
     });
 };
 
+/*Function: stopFreestyle() */ 
 let stopFreestyle = () => {
     audioPlayer.pause();
     timer.reset();
+    topicName = null; 
 
     $('.countdown-container').hide();
     $('.actions').hide();
+    $("#level1").css('color', '#FF5722'); 
+    $("#level3").css('color', 'white');
+    $("#level3").css('color', 'white');  
     $('#menuWrapper').animate({
         top: 0
     }, 400);
+    
 };
+
 let newList = (level) => {
   current_level = level;
   timer.setWords(word_levels[level]);
 }
-$('#countdown').click((e) => {
-    timer.toggleDefinition();
-});
+// $('#countdown').click((e) => {
+//     timer.toggleDefinition();
+// });
+
 $(document).keypress((e) => {
   timer.checkKey(e);
 });
+
 $(".topic").click((e) => {
-    let topicName = $(e.currentTarget).data('name')
+    topicName = $(e.currentTarget).data('name')
 
     if (topicName) {
         audioPlayer.src = `sounds/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`;
@@ -90,3 +100,46 @@ $(".topic").click((e) => {
         startFreestyle(topicName);
     }
 });
+
+$("#level1").click((e) => {
+    // let topicName = $(e.currentTarget).data('name')
+    $(e.currentTarget).css('color', '#FF5722');
+    $("#level2").css('color', 'white'); 
+    $("#level3").css('color', 'white');  
+    current_level = 1;
+    timer.reset(); 
+    timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer, current_level);
+    startFreestyle(topicName);
+    console.log('idk');
+});
+
+$("#level2").click((e) => {
+    $(e.currentTarget).css('color', '#FF5722');
+    $("#level1").css('color', 'white'); 
+    $("#level3").css('color', 'white');  
+    current_level = 2;
+    timer.reset(); 
+    timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer, current_level);
+    startFreestyle(topicName);
+});
+
+$("#level3").click((e) => {
+    $(e.currentTarget).css('color', '#FF5722');
+    $("#level1").css('color', 'white'); 
+    $("#level2").css('color', 'white');  
+    current_level = 3;
+    timer.reset(); 
+    timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer, current_level);
+    startFreestyle(topicName);
+});
+
+/* KeyListener: Left and Right Arrow Keys */
+window.onkeydown = function(e) {
+    var key = e.keyCode ? e.keyCode : e.which;
+    
+    if (key == 39) {
+        timer.changeWord(); 
+    } else if (key == 37) {
+        timer.changeWord("leftArrowKey");
+    }
+}

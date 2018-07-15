@@ -1,4 +1,4 @@
-Vocab Word,Definition
+﻿Vocab Word,Definition
 abiotic,"nonliving, physical features of the environment, including air, water, sunlight, soil, temperature, and climate."
 abrasion,"a type of erosion that occurs when windblown sediments strike rocks and sediments, polishing and pitting their surface."
 absolute age,"age, in years, of a rock or other object; can be determined by using properties of the atoms that make up materials."
@@ -363,7 +363,7 @@ hybrid,an offspring that was given different genetic information for a trait fro
 hydrate,compound that has water chemically attached to its ions and written into its chemical formula.
 hydrocarbon,saturated or unsaturated compound containing only carbon and hydrogen atoms.
 hydroelectricity,electricity produced from the energy of falling water.
-hydronium ions,#ERROR!
+hydronium ions,#NAME?
 hydrosphere,all the water on Earth’s surface.
 hyphae,"mass of many-celled, threadlike tubes forming the body of a fungus."
 hypothesis,educated guess using what you know and what you observe.
@@ -906,3 +906,65 @@ white dwarf,"late stage in the life cycle of a comparatively low-mass main seque
 wind farm,area where many windmills use wind to generate electricity.
 work,transfer of energy that occurs when a force makes an object move; measured in joules.
 zygote,new diploid cell formed when a sperm fertilizes an egg; will divide by mitosis and develop into a new organism.
+fat,"nutrient that stores energy, cushions organs, and helps the body absorb vitamins."
+fault,surface along which rocks move when they pass their elastic limit and break.
+fault-block mountains,"mountains formed from huge, tilted blocks of rock that are separated from surrounding rocks by faults."
+fermentation,"process by which oxygen-lacking cells and some one-celled organisms release small amounts of energy from glucose molecules and produce wastes such as alcohol, carbon dioxide, and lactic acid."
+fertilization,"in sexual reproduction, the joining of a sperm and egg."
+fertilizer,chemical that helps plants and other organisms grow.
+fetal stress,"can occur during the birth process or after birth as an infant adjusts from a watery, dark, constant-temperature environment to its new environment."
+fetus,"in humans, a developing baby after the first two months of pregnancy until birth."
+fin,"structure used by fish for steering, balancing, and movement."
+first law of thermodynamics,states that the increase in thermal energy of a system equals the work done on the system plus the heat added to the system.
+fission,simplest form of asexual reproduction in which two new cells are produced with genetic material identical to each other and identical to the previous cell.
+flagellum,"long, thin whiplike structure that helps organisms move through moist or wet surroundings."
+fluorescent light,light that results when ultraviolet radiation produced inside a fluorescent bulb causes the phosphor coating inside the bulb to glow.
+focal length,distance from the center of a lens or mirror to the focal point.
+focal point,"the point on the optical axis of a concave mirror or convex lens where light rays, that are initially parallel to the optical axis, pass through after they strike the mirror or lens."
+focus,"in an earthquake, the point below Earth’s surface where energy is released in the form of seismic waves."
+fog,a stratus cloud that forms when air is cooled to its dew point near the ground.
+folded mountains,"mountains formed when horizontal rock layers are squeezed from opposite sides, causing them to buckle and fold."
+foliated,"describes metamorphic rock, such as slate and gneiss, whose mineral grains line up in parallel layers."
+food group,"group of foods—such as bread, cereal, rice, and pasta—containing the same type of nutrients."
+food web,model that shows the complex feeding relationships among organisms in a community.
+force,a push or pull exerted on an object.
+fossil fuels,"oil, natural gas, and coal; formed from the decayed remains of ancient plants and animals."
+fossils,"remains, imprints, or traces of prehistoric organisms that can tell when and where organisms once lived and how they lived."
+fracture,"physical property of some minerals that causes them to break with uneven, rough, or jagged surfaces."
+free-living organism,organism that does not depend on another organism for food or a place to live.
+frequency,the number of wavelengths that pass a fixed point each second; is expressed in hertz (Hz).
+friction,force that opposes the sliding motion between two touching surfaces.
+frond,leaf of a fern that grows from the rhizome.
+front,"boundary between two air masses with different temperatures, density, or moisture; can be cold, warm, occluded, and stationary."
+full moon,phase that occurs when all of the Moon’s surface facing Earth reflects light.
+fat,"nutrient that stores energy, cushions organs, and helps the body absorb vitamins."
+fault,surface along which rocks move when they pass their elastic limit and break.
+fault-block mountains,"mountains formed from huge, tilted blocks of rock that are separated from surrounding rocks by faults."
+fermentation,"process by which oxygen-lacking cells and some one-celled organisms release small amounts of energy from glucose molecules and produce wastes such as alcohol, carbon dioxide, and lactic acid."
+fertilization,"in sexual reproduction, the joining of a sperm and egg."
+fertilizer,chemical that helps plants and other organisms grow.
+fetal stress,"can occur during the birth process or after birth as an infant adjusts from a watery, dark, constant-temperature environment to its new environment."
+fetus,"in humans, a developing baby after the first two months of pregnancy until birth."
+fin,"structure used by fish for steering, balancing, and movement."
+first law of thermodynamics,states that the increase in thermal energy of a system equals the work done on the system plus the heat added to the system.
+fission,simplest form of asexual reproduction in which two new cells are produced with genetic material identical to each other and identical to the previous cell.
+flagellum,"long, thin whiplike structure that helps organisms move through moist or wet surroundings."
+fluorescent light,light that results when ultraviolet radiation produced inside a fluorescent bulb causes the phosphor coating inside the bulb to glow.
+focal length,distance from the center of a lens or mirror to the focal point.
+focal point,"the point on the optical axis of a concave mirror or convex lens where light rays, that are initially parallel to the optical axis, pass through after they strike the mirror or lens."
+focus,"in an earthquake, the point below Earth’s surface where energy is released in the form of seismic waves."
+fog,a stratus cloud that forms when air is cooled to its dew point near the ground.
+folded mountains,"mountains formed when horizontal rock layers are squeezed from opposite sides, causing them to buckle and fold."
+foliated,"describes metamorphic rock, such as slate and gneiss, whose mineral grains line up in parallel layers."
+food group,"group of foods—such as bread, cereal, rice, and pasta—containing the same type of nutrients."
+food web,model that shows the complex feeding relationships among organisms in a community.
+force,a push or pull exerted on an object.
+fossil fuels,"oil, natural gas, and coal; formed from the decayed remains of ancient plants and animals."
+fossils,"remains, imprints, or traces of prehistoric organisms that can tell when and where organisms once lived and how they lived."
+fracture,"physical property of some minerals that causes them to break with uneven, rough, or jagged surfaces."
+free-living organism,organism that does not depend on another organism for food or a place to live.
+frequency,the number of wavelengths that pass a fixed point each second; is expressed in hertz (Hz).
+friction,force that opposes the sliding motion between two touching surfaces.
+frond,leaf of a fern that grows from the rhizome.
+front,"boundary between two air masses with different temperatures, density, or moisture; can be cold, warm, occluded, and stationary."
+full moon, "phase that occurs when all of the Moon’s surface facing Earth reflects light."
