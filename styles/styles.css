@@ -70,10 +70,12 @@ header {
 }
 .help { 
     left: 100px; 
+    color:#FF5722;
 }
 
 .define {
-    left: 275px; 
+    left: 275px;
+    color:#FF5722;
 }
 
 .punchline {

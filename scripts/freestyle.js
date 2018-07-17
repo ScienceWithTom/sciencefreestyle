@@ -9,6 +9,7 @@ const sounds = [
 
 const countdownTimer = 5000;
 const wordTimer = 7000;
+var paused = false; 
 var topicName = null; 
 var current_level= 1;
 var word_levels = {1:[],2:[],3:[]};
@@ -25,7 +26,16 @@ let startFreestyle = (topic) => {
         $('.actions').show();
         $('.countdown-container').css('display', 'flex');
 
-        $.get(`data/${topic}.csv`)
+    });
+
+    parseCSV(topic);
+    timer.setWords(word_levels[current_level]);
+    timer.start();
+};
+
+/*Function: parseCSV*/
+let parseCSV = (topic) => {
+    $.get(`data/${topic}.csv`)
             .done((csv) => {
                 let words = [];
                 try {
@@ -53,14 +63,13 @@ let startFreestyle = (topic) => {
                   }
                 }
                 timer.setWords(word_levels[current_level]);
-                timer.start();
+                // timer.start();
             })
             .fail(() => {
                 console.error(`Error while loading the CSV`);
                 stopFreestyle();
             });
-    });
-};
+}
 
 /*Function: stopFreestyle() */ 
 let stopFreestyle = () => {
@@ -83,9 +92,9 @@ let newList = (level) => {
   current_level = level;
   timer.setWords(word_levels[level]);
 }
-// $('#countdown').click((e) => {
-//     timer.toggleDefinition();
-// });
+$('#countdown').click((e) => {
+    timer.changeWord(); 
+});
 
 $(document).keypress((e) => {
   timer.checkKey(e);
@@ -107,10 +116,8 @@ $("#level1").click((e) => {
     $("#level2").css('color', 'white'); 
     $("#level3").css('color', 'white');  
     current_level = 1;
-    timer.reset(); 
-    timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer, current_level);
-    startFreestyle(topicName);
-    console.log('idk');
+    timer.setWords(word_levels[current_level]);
+    console.log("update")
 });
 
 $("#level2").click((e) => {
@@ -118,9 +125,7 @@ $("#level2").click((e) => {
     $("#level1").css('color', 'white'); 
     $("#level3").css('color', 'white');  
     current_level = 2;
-    timer.reset(); 
-    timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer, current_level);
-    startFreestyle(topicName);
+    timer.setWords(word_levels[current_level]); 
 });
 
 $("#level3").click((e) => {
@@ -128,9 +133,7 @@ $("#level3").click((e) => {
     $("#level1").css('color', 'white'); 
     $("#level2").css('color', 'white');  
     current_level = 3;
-    timer.reset(); 
-    timer = new Timer(countdownTimer, document.getElementById('countdown'), [], wordTimer, current_level);
-    startFreestyle(topicName);
+    timer.setWords(word_levels[current_level])
 });
 
 /* KeyListener: Left and Right Arrow Keys */
@@ -141,5 +144,21 @@ window.onkeydown = function(e) {
         timer.changeWord(); 
     } else if (key == 37) {
         timer.changeWord("leftArrowKey");
+    } else if (key == 32) {
+        pauseResume(); 
     }
+}
+
+/*Function: pauseResume()
+Pauses freestyle.
+*/
+let pauseResume = () => {
+    if(paused) {    
+        audioPlayer.play();
+        timer.pauseResume(paused);
+    } else {
+        audioPlayer.pause(); 
+        timer.pauseResume(paused);
+    }
+    paused = !paused; 
 }
