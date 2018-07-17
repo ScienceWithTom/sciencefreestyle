@@ -101,10 +101,12 @@ class Timer {
     toggleHelpers() {
         if (this.helper) {
             this.helper = false;
+            $(document.getElementsByClassName('help')[0]).css('color', '#FF5722');
         }
         else {
             this.helper = true;
             this.els.rhymes.textContent = this.word[4];
+            $(document.getElementsByClassName('help')[0]).css('color', 'white');
         }
         this.els.rhymes.hidden = !this.els.rhymes.hidden;
     }
@@ -116,13 +118,27 @@ class Timer {
     toggleDefinition() {
         if (this.definition) {
             this.definition = false;
+            $(document.getElementsByClassName('define')[0]).css('color', '#FF5722');
             //this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
         }
         else {
             this.definition = !this.els.definition.hidden;
             this.els.definition.textContent = `"${this.word[3]}"`;
+            $(document.getElementsByClassName('define')[0]).css('color', 'white');
         }
         this.els.definition.hidden = !this.els.definition.hidden; 
+    }
+
+    /*Function: pause()
+    Pauses the timer.
+    */
+    pauseResume(paused) {
+        if (paused) {
+            this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
+        } else {
+            clearInterval(this.timeout);
+            this.timeout = null;
+        }
     }
 
     /* 
