@@ -154,10 +154,8 @@ Pauses freestyle.
 */
 let pauseResume = () => {
     if(paused) {    
-        audioPlayer.play();
         timer.pauseResume(paused);
     } else {
-        audioPlayer.pause(); 
         timer.pauseResume(paused);
     }
     paused = !paused; 

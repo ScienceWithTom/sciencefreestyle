@@ -14,74 +14,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <header class="container-fluid">
-        <a class="logo" href="https://www.sciencewithtom.com/" target="_blank"><img src="images/logo-white_s.png" class="logo_text" title="Science Freestyle with Tom" alt="Science Freestyle with Tom"/></a>
-        <a class="actions help" onclick="timer.toggleHelpers()">Rhyming Helpers</a>
-        <a class="actions define" onclick="timer.toggleDefinition()">Definitions</a>
-        <a class="actions" id="level1" onclick="newList(1)">level 1</a>
-        <a class="actions" id="level2" onclick="newList(2)">level 2</a>
-        <a class="actions" id="level3" onclick="newList(3)">level 3</a>
-        <a class="actions exit" onclick="stopFreestyle()">X</a>
-    </header>
+    <div class ="container_full">
+      <header class="container-fluid">
+          <!-- <a class="logo" href="https://www.sciencewithtom.com/" target="_blank"></a>
+          --><img src="images/logo-white_s.png" class="logo_text" title="Science Freestyle with Tom" alt="Science Freestyle with Tom"/>
+          <a class="actions help" onclick="timer.toggleHelpers()">Rhyming Helpers</a>
+          <a class="actions define" onclick="timer.toggleDefinition()">Definitions</a>
+          <a class="actions" id="level1" onclick="newList(1)">level 1</a>
+          <a class="actions" id="level2" onclick="newList(2)">level 2</a>
+          <a class="actions" id="level3" onclick="newList(3)">level 3</a>
+          <a class="actions exit" onclick="stopFreestyle()">X</a>
+      </header>
 
-    <div id="menuWrapper">
-      <div class="container" id="menu">
-        <div class="col-sm-12 punchline">
-          <h1>Freestyle With Science</h1>
-          <h4><em>Pick a topic</em></h4>
-        </div>
+      <div id="menuWrapper">
+        <div class="container" id="menu">
+          <div class="col-sm-12 punchline">
+            <h1>Freestyle With Science</h1>
+            <h4><em>Pick a topic</em></h4>
+          </div>
 
-        <div class="col-sm-12 topics">
-            <a class="col-sm-6 topic" data-name="earth">
-              <img class="topic-logo" src="images/earth.svg" />
-              <div class="topic-name">Earth</div>
-            </a>
-            <a class="col-sm-6 topic" data-name="life">
-              <img class="topic-logo" src="images/life.svg" />
-              <div class="topic-name">Life</div>
-            </a>
-            <a class="col-sm-6 topic" data-name="SandE">
-              <img class="topic-logo" src="images/SandE.svg" />
-              <div class="topic-name">Doing Science</div>
-            </a>
-            <a class="col-sm-6 topic" data-name="physics">
-              <img class="topic-logo" src="images/physics.svg" />
-              <div class="topic-name">Physics & Chemistry</div>
-            </a>
-            <!--<a class="col-sm-6 topic" data-name="physics">
-              <img class="topic-logo" src="images/you.svg" />
-              <div class="topic-name">You</div>
-            </a>-->
+          <div class="col-sm-12 topics">
+              <a class="col-sm-6 topic" data-name="earth">
+                <img class="topic-logo" src="images/earth.svg" />
+                <div class="topic-name">Earth</div>
+              </a>
+              <a class="col-sm-6 topic" data-name="life">
+                <img class="topic-logo" src="images/life.svg" />
+                <div class="topic-name">Life</div>
+              </a>
+              <a class="col-sm-6 topic" data-name="SandE">
+                <img class="topic-logo" src="images/SandE.svg" />
+                <div class="topic-name">Doing Science</div>
+              </a>
+              <a class="col-sm-6 topic" data-name="physics">
+                <img class="topic-logo" src="images/physics.svg" />
+                <div class="topic-name">Physics & Chemistry</div>
+              </a>
+              <!--<a class="col-sm-6 topic" data-name="physics">
+                <img class="topic-logo" src="images/you.svg" />
+                <div class="topic-name">You</div>
+              </a>-->
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="countdown-container">
-      <div class="countdown countdown--wide" id="countdown">
-        <div class="countdown__fill" id="ticker"></div>
-        <div class="countdown__digit" id="digit">
-          <div class="countdown__rhymes" id="rhymes"></div>          
-          <div id="seconds"></div>
-          <div class="countdown__definition" id="definition"></div>
+      <div class="countdown-container">
+        <div class="countdown countdown--wide" id="countdown">
+          <div class="countdown__fill" id="ticker"></div>
+          <div class="countdown__digit" id="digit">
+            <div class="countdown__rhymes" id="rhymes"></div>          
+            <div id="seconds"></div>
+            <div class="countdown__definition" id="definition"></div>
+            <div class="countdown__rhymes" id="rhymes_below"></div> 
+          </div>
+          <!--.countdown__buttons-->
+          <!--	.countdown__button + -->
+          <!--	.countdown__button - -->
         </div>
-        <!--.countdown__buttons-->
-        <!--	.countdown__button + -->
-        <!--	.countdown__button - -->
       </div>
-    </div>
 
-    <audio id="player" loop="true"></audio>
+      <audio id="player" loop="true"></audio>
 
-    <footer>
-      <div class="container">Made with ♥ in San Francisco.</div>
-    </footer>
+      <footer>
+        <div class="container">Made with ♥ in San Francisco.</div>
+      </footer>
 
-    <!-- External JavaScript -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="scripts/jquery.csv.min.js"></script>
-    <!-- Personnal JavaScript -->
-    <script src="scripts/timer.js"></script>
-    <script src="scripts/freestyle.js"></script>
-  </body>
+      <!-- External JavaScript -->
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="scripts/jquery.csv.min.js"></script>
+      <!-- Personnal JavaScript -->
+      <script src="scripts/timer.js"></script>
+      <script src="scripts/freestyle.js"></script>
+  </div>
+</body>
 </html>
