@@ -13,6 +13,7 @@ class Timer {
             seconds: document.getElementById('seconds'),
             definition: document.getElementById('definition'),
             rhymes: document.getElementById('rhymes'),
+            rhymes_below: document.getElementById('rhymes_below'),
         };
         this.pastWords = [];  
     }
@@ -23,7 +24,9 @@ class Timer {
         this.running = true;
         let remainingSeconds = this.els.seconds.textContent = this.duration / 1000;
         this.els.definition.textContent = '';
-        this.els.rhymes.textContent = ''; 
+        this.els.rhymes.textContent = '';
+        this.helper = true; 
+        this.definition = true; 
 
         function draw(now) {
             if (!start) start = now;
@@ -101,14 +104,23 @@ class Timer {
     toggleHelpers() {
         if (this.helper) {
             this.helper = false;
-            $(document.getElementsByClassName('help')[0]).css('color', '#FF5722');
+            $(document.getElementsByClassName('help')[0]).css('color', 'white');
+            this.els.rhymes.hidden = true;
+            this.els.rhymes_below.hidden = true; 
         }
-        else {
+        else if (this.definition) {
+            console.log(this.definition); 
             this.helper = true;
             this.els.rhymes.textContent = this.word[4];
-            $(document.getElementsByClassName('help')[0]).css('color', 'white');
+            $(document.getElementsByClassName('help')[0]).css('color', '#FF5722');
+            this.els.rhymes.hidden = !this.els.rhymes.hidden;
+        } else {
+            this.helper = true;
+            this.els.rhymes_below.textContent = this.word[4];
+            this.els.rhymes_below.hidden = !this.els.rhymes_below.hidden; 
+            $(document.getElementsByClassName('help')[0]).css('color', '#FF5722');
+            
         }
-        this.els.rhymes.hidden = !this.els.rhymes.hidden;
     }
 
     /* 
@@ -122,9 +134,14 @@ class Timer {
             //this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
         }
         else {
-            this.definition = !this.els.definition.hidden;
+            this.definition = true; 
             this.els.definition.textContent = `"${this.word[3]}"`;
             $(document.getElementsByClassName('define')[0]).css('color', 'white');
+
+            if (this.helper) {
+                this.els.rhymes.hidden = !this.els.rhymes.hidden; 
+                this.els.rhymes_below.hidden = !this.els.rhymes_below.hidden;
+            }
         }
         this.els.definition.hidden = !this.els.definition.hidden; 
     }
