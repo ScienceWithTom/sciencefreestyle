@@ -130,13 +130,13 @@ class Timer {
     toggleDefinition() {
         if (this.definition) {
             this.definition = false;
-            $(document.getElementsByClassName('define')[0]).css('color', '#FF5722');
+            $(document.getElementsByClassName('define')[0]).css('color', 'white');
             //this.timeout = setTimeout(() => { this.changeWord(); }, this.wordTimer);
         }
         else {
             this.definition = true; 
             this.els.definition.textContent = `"${this.word[3]}"`;
-            $(document.getElementsByClassName('define')[0]).css('color', 'white');
+            $(document.getElementsByClassName('define')[0]).css('color', '#FF5722');
 
             if (this.helper) {
                 this.els.rhymes.hidden = !this.els.rhymes.hidden; 
