@@ -48,6 +48,7 @@ let parseCSV = (topic) => {
                 for (let i=1; i<words.length; i++) {
                   let level=parseInt(words[i][5]);
                   let word=words[i];
+                  console.log(word);
                   word_levels[level].push(word);
                 }
                 // randomly switch the order of words in the dictionary
@@ -63,7 +64,6 @@ let parseCSV = (topic) => {
                   }
                 }
                 timer.setWords(word_levels[current_level]);
-                // timer.start();
             })
             .fail(() => {
                 console.error(`Error while loading the CSV`);
@@ -76,6 +76,7 @@ let stopFreestyle = () => {
     audioPlayer.pause();
     timer.reset();
     topicName = null; 
+    current_level = 1; 
 
     $('.countdown-container').hide();
     $('.actions').hide();
